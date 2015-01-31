@@ -18,6 +18,17 @@ TARGET_BOOTLOADER_BOARD_NAME := hl3gds
 BOARD_KERNEL_CMDLINE := console=null androidboot.console=null androidboot.hardware=qcom user_debug=31 maxcpus=4 msm_rtb.filter=0x3F
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_SEPARATED_DT := true
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02000000 --dt device/samsung/hl3gds/dtb --tags_offset 0x01e00000
+TARGET_RECOVERY_PIXEL_FORMAT := "BRGA_8888"
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 720
+
+
+BOARD_HAS_NO_MISC_PARTITION := true
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_USES_MMC_UTILS := true
+BOARD_SUPPRESS_EMMC_WIPE := true
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x105c0000
